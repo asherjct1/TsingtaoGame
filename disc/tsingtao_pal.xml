@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TSINGTAO EXPRESS '96 — PAL PlayStation 1 Multi-Track Disc Image Manifest
+  - Track 01: Mode2/2352 Data (PAL SCEE License + SYSTEM.CNF + SLES_096.00 + 2MB anti-runaway padding)
+  - Track 02: Red Book CD-DA Audio (44.1 kHz 16-bit Stereo, 2s pregap)
+-->
+<iso_project image_name="../build/tsingtao_express_96.bin" cue_sheet="../build/tsingtao_express_96.cue">
+	<track type="data" cdvd_style="false">
+		<identifiers
+			system        ="PLAYSTATION"
+			application   ="PLAYSTATION"
+			volume        ="TSINGTAO_EXPRESS_96"
+			volume_set    ="TSINGTAO_EXPRESS_96"
+			publisher     ="QINGDAO_ARCADE_96"
+			data_preparer ="PSN00BSDK_MKPSXISO"
+			copyright     ="SLES_096.00;1"
+		/>
+
+		<!--
+			PAL SCEE License Data (28,032 bytes = 12 sectors x 2,336 bytes).
+			Uses open-source disc/license_pal.dat containing the PAL SCEE
+			sector-4 license string and minimal empty TMD header.
+			Optionally replace with an official dumped SCEE license file if needed.
+		-->
+		<license file="license_pal.dat"/>
+
+		<directory_tree>
+			<file name="SYSTEM.CNF"  type="data" source="SYSTEM.CNF"/>
+			<file name="SLES_096.00" type="data" source="../build/SLES_096.00"/>
+			<!-- 1024 sectors (~2 MB) trailing pad prevents optical drive runaway on real 1995 PS1 hardware -->
+			<dummy sectors="1024" type="0"/>
+		</directory_tree>
+	</track>
+
+	<!-- Track 02: Red Book CD-DA Soundtrack (Balatro Theme - 80's sound edit) -->
+	<track type="audio" source="../assets/raw/bgm.wav"/>
+</iso_project>

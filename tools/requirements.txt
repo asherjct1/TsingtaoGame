@@ -1,0 +1,3 @@
+# Python dependencies for tools/ asset & audio scripts
+pillow>=11.0.0
+yt-dlp>=2025.0.0

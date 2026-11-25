@@ -1,0 +1,51 @@
+# macOS / OS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build outputs (CMake, Ninja, PS1 executables, disc images, recordings)
+build/
+*.elf
+*.map
+*.bin
+*.cue
+*.iso
+*.mp4
+*.mkv
+
+# Local cross-compiler toolchain & SDK (regenerated via ./scripts/setup_toolchain.sh)
+toolchain/
+
+# Python caches & local virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+tools/.assets_venv/
+tools/.audio_venv/
+
+# Local libretro emulator cores, BIOS dumps, saves, and machine-specific config
+tools/libretro/
+
+# Generated binary/C assets (regenerated via `make assets` and `make audio`)
+assets/gen/
+
+# Large Red Book CD-DA audio track (regenerated via `make audio` / `tools/fetch_bgm.py`)
+assets/raw/bgm.wav
+assets/raw/bgm.tmp.wav
+assets/raw/bgm.mp3
+assets/raw/bgm.m4a
+assets/raw/bgm.flac
+assets/raw/bgm.ogg
+assets/raw/bgm.opus
+assets/raw/bgm.aac
